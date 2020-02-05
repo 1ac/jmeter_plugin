@@ -64,8 +64,7 @@ public abstract class BaseAggregation {
 		responseTimesToAggregate.add(itemValue);
 	}
 
-	public Double getAggregateValue(@NotNull final PerformanceStatisticMetrics param)
-	{
+	public Double getAggregateValue(@NotNull final PerformanceStatisticMetrics param) {
 		switch (param) {
 			case AVERAGE:
 				return mean;
@@ -73,6 +72,10 @@ public abstract class BaseAggregation {
 				return max;
 			case MIN:
 				return min;
+			case LINE50: {
+				int ind50 = (int) Math.round(responseTimesToAggregate.size() * 0.5d);
+				return responseTimesToAggregate.get(ind50 - 1);
+			}
 			case LINE90: {
 				int ind90 = (int) Math.round(responseTimesToAggregate.size() * 0.9d);
 				return responseTimesToAggregate.get(ind90 - 1);

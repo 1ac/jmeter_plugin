@@ -6,6 +6,7 @@ public enum PerformanceStatisticMetrics {
 	AVERAGE("Average", "Average time", "#162EAE", "#0095d9"),
 	MAX("Max", "Max time", "#95002B", "#e55751"),
 	MIN("Min", "Min time", "#6A0AAB", "#bb79f4"),
+	LINE50("50Line", "50% line", "#BFBC30", "#4dbf6a"),
 	LINE90("90Line", "90% line", "#BFBC30", "#4dbf6a"),
 
 	RESPONSE_CODE("ResponseCode", "Response codes", null, null);
