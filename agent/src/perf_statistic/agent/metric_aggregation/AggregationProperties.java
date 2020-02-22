@@ -13,7 +13,7 @@ import java.util.Map;
 public class AggregationProperties {
 //  Aggregate	parameters
 	private final String aggregateFile;
-	private final boolean[] metrics = new boolean[6];
+	private final boolean[] metrics = new boolean[9];
 
 	private final boolean responseCodes;
 	private final boolean assertions;
@@ -45,6 +45,11 @@ public class AggregationProperties {
 		metrics[3] = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_METRIC_LINE90));
 		metrics[4] = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_HTTP_RESPONSE_CODE));
 		metrics[5] = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_METRIC_LINE50));
+		metrics[6] = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_METRIC_LINE25));
+		metrics[7] = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_METRIC_LINE75));
+		metrics[8] = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_METRIC_LINE95));
+		metrics[9] = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_METRIC_LINE98));
+		metrics[10] = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_METRIC_LINE99));
 
 		responseCodes = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_HTTP_RESPONSE_CODE));
 		assertions = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_CHECK_ASSERT));
@@ -67,11 +72,16 @@ public class AggregationProperties {
 			}
 			if (isBuildHistoryValues) {
 				buildCount = Integer.parseInt(params.get(PluginConstants.PARAMS_REF_BUILD_COUNT));
-				refMetrics = new boolean[4];
+				refMetrics = new boolean[7];
 				refMetrics[0] = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_REF_METRIC_AVG));
 				refMetrics[1] = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_REF_METRIC_LINE90));
 				refMetrics[2] = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_REF_METRIC_MAX));
 				refMetrics[3] = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_REF_METRIC_LINE50));
+				refMetrics[4] = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_REF_METRIC_LINE25));
+				refMetrics[5] = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_REF_METRIC_LINE75));
+				refMetrics[6] = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_REF_METRIC_LINE95));
+				refMetrics[7] = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_REF_METRIC_LINE98));
+				refMetrics[8] = Boolean.parseBoolean(params.get(PluginConstants.PARAMS_REF_METRIC_LINE99));
 			}
 		}
 	}
@@ -148,6 +158,22 @@ public class AggregationProperties {
 	public boolean isCount50LineReference() {
 		return refMetrics[3];
 	}
+	public boolean isCount25LineReference() {
+		return refMetrics[4];
+	}
+	public boolean isCount75LineReference() {
+		return refMetrics[5];
+	}
+	public boolean isCount95LineReference() {
+		return refMetrics[6];
+	}
+	public boolean isCount98LineReference() {
+		return refMetrics[7];
+	}
+	public boolean isCount99LineReference() {
+		return refMetrics[8];
+	}
+
 
 	public String getReferencesDataFile(String workingDir) {
 		if (aggregateFile == null) {

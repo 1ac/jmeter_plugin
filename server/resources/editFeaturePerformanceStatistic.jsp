@@ -48,6 +48,28 @@
           <td>
             <props:checkboxProperty name="perfTest.agg.90line"/><label for="perfTest.agg.90line">90% line</label>
           </td>
+          <td>
+            <props:checkboxProperty name="perfTest.agg.50line"/><label for="perfTest.agg.50line">50% line</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <props:checkboxProperty name="perfTest.agg.25line"/><label for="perfTest.agg.25line">25%</label>
+          </td>
+          <td>
+            <props:checkboxProperty name="perfTest.agg.75line"/><label for="perfTest.agg.75line">75% line</label>
+          </td>
+          <td>
+            <props:checkboxProperty name="perfTest.agg.95line"/><label for="perfTest.agg.95line">95% line</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <props:checkboxProperty name="perfTest.agg.98line"/><label for="perfTest.agg.98line">98%</label>
+          </td>
+          <td>
+            <props:checkboxProperty name="perfTest.agg.99line"/><label for="perfTest.agg.99line">99% line</label>
+          </td>
         </tr>
         <tr>
           <td colspan="2">
@@ -162,6 +184,12 @@
               <div style="margin-left: 10px">
                 <props:checkboxProperty name="perfTest.agg.ref.avg" style="margin-right: 5px"/><label for="perfTest.agg.ref.avg">Average</label> <br/>
                 <props:checkboxProperty name="perfTest.agg.ref.90line" style="margin-right: 5px"/><label for="perfTest.agg.ref.90line">90% line</label> <br/>
+                <props:checkboxProperty name="perfTest.agg.ref.50line" style="margin-right: 5px"/><label for="perfTest.agg.ref.50line">50% line</label> <br/>
+                <props:checkboxProperty name="perfTest.agg.ref.25line" style="margin-right: 5px"/><label for="perfTest.agg.ref.25line">50% line</label> <br/>
+                <props:checkboxProperty name="perfTest.agg.ref.75line" style="margin-right: 5px"/><label for="perfTest.agg.ref.75line">50% line</label> <br/>
+                <props:checkboxProperty name="perfTest.agg.ref.95line" style="margin-right: 5px"/><label for="perfTest.agg.ref.95line">50% line</label> <br/>
+                <props:checkboxProperty name="perfTest.agg.ref.98line" style="margin-right: 5px"/><label for="perfTest.agg.ref.98line">50% line</label> <br/>
+                <props:checkboxProperty name="perfTest.agg.ref.99line" style="margin-right: 5px"/><label for="perfTest.agg.ref.99line">50% line</label> <br/>
                 <props:checkboxProperty name="perfTest.agg.ref.max" style="margin-right: 5px"/><label for="perfTest.agg.ref.max">Max</label> <br/>
               </div>
             </div>

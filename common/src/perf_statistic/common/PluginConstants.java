@@ -13,6 +13,11 @@ public class PluginConstants {
 	public static final String PARAMS_METRIC_AVG = "perfTest.agg.avg";
 	public static final String PARAMS_METRIC_LINE90 = "perfTest.agg.90line";
 	public static final String PARAMS_METRIC_LINE50 = "perfTest.agg.50line";
+	public static final String PARAMS_METRIC_LINE25 = "perfTest.agg.25line";
+	public static final String PARAMS_METRIC_LINE75 = "perfTest.agg.75line";
+	public static final String PARAMS_METRIC_LINE95 = "perfTest.agg.95line";
+	public static final String PARAMS_METRIC_LINE98 = "perfTest.agg.98line";
+	public static final String PARAMS_METRIC_LINE99 = "perfTest.agg.99line";
 	public static final String PARAMS_HTTP_RESPONSE_CODE = "perfTest.agg.respCode";
 	public static final String PARAMS_USED_TEST_FORMAT = "perfTest.agg.testFormat";
 	public static final String PARAMS_CALC_TOTAL = "perfTest.agg.total";
@@ -30,6 +35,11 @@ public class PluginConstants {
 	public static final String PARAMS_REF_METRIC_AVG = "perfTest.agg.ref.avg";
 	public static final String PARAMS_REF_METRIC_LINE90 = "perfTest.agg.ref.90line";
 	public static final String PARAMS_REF_METRIC_LINE50 = "perfTest.agg.ref.50line";
+	public static final String PARAMS_REF_METRIC_LINE25 = "perfTest.agg.ref.25line";
+	public static final String PARAMS_REF_METRIC_LINE75 = "perfTest.agg.ref.75line";
+	public static final String PARAMS_REF_METRIC_LINE95 = "perfTest.agg.ref.95line";
+	public static final String PARAMS_REF_METRIC_LINE98 = "perfTest.agg.ref.98line";
+	public static final String PARAMS_REF_METRIC_LINE99 = "perfTest.agg.ref.99line";
 
 	public static final String PARAMS_REF_TYPE = "perfTest.ref.type";
 

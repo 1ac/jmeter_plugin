@@ -29,11 +29,16 @@ public class BuildHistoryRefCheckAdapter extends BuildServerAdapter {
 		ParametersProvider parametersProvider = runningBuild.getParametersProvider();
 		if ("true".equals(parametersProvider.get(PluginConstants.PARAMS_REF_CHECK)) && "true".equals(parametersProvider.get(PluginConstants.PARAMS_REF_TYPE_BUILD_HISTORY))) {
 			runningBuild.addBuildMessage(DefaultMessagesInfo.createBlockStart(CHECK_REFERENCE_ACTIVITY_NAME_BUILD_HISTORY, DefaultMessagesInfo.BLOCK_TYPE_MODULE));
-			boolean[] referenceMetrics = new boolean[4];
+			boolean[] referenceMetrics = new boolean[7];
 			referenceMetrics[2] = Boolean.parseBoolean(parametersProvider.get(PluginConstants.PARAMS_REF_METRIC_MAX));
 			referenceMetrics[0] = Boolean.parseBoolean(parametersProvider.get(PluginConstants.PARAMS_REF_METRIC_AVG));
 			referenceMetrics[1] = Boolean.parseBoolean(parametersProvider.get(PluginConstants.PARAMS_REF_METRIC_LINE90));
 			referenceMetrics[3] = Boolean.parseBoolean(parametersProvider.get(PluginConstants.PARAMS_REF_METRIC_LINE50));
+			referenceMetrics[4] = Boolean.parseBoolean(parametersProvider.get(PluginConstants.PARAMS_REF_METRIC_LINE25));
+			referenceMetrics[5] = Boolean.parseBoolean(parametersProvider.get(PluginConstants.PARAMS_REF_METRIC_LINE75));
+			referenceMetrics[6] = Boolean.parseBoolean(parametersProvider.get(PluginConstants.PARAMS_REF_METRIC_LINE95));
+			referenceMetrics[7] = Boolean.parseBoolean(parametersProvider.get(PluginConstants.PARAMS_REF_METRIC_LINE98));
+			referenceMetrics[8] = Boolean.parseBoolean(parametersProvider.get(PluginConstants.PARAMS_REF_METRIC_LINE99));
 
 			Double criticalVariation = parametersProvider.get(PluginConstants.PARAMS_VARIATION_CRITICAL) == null ? 0.15 : Double.parseDouble(parametersProvider.get(PluginConstants.PARAMS_VARIATION_CRITICAL));
 			Double variation = parametersProvider.get(PluginConstants.PARAMS_VARIATION_WARN) == null ? Double.NEGATIVE_INFINITY : Double.parseDouble(parametersProvider.get(PluginConstants.PARAMS_VARIATION_WARN));
@@ -148,6 +153,11 @@ public class BuildHistoryRefCheckAdapter extends BuildServerAdapter {
 				 if (metric != null && metric == PerformanceStatisticMetrics.AVERAGE && referenceMetrics[0]
 						 || metric == PerformanceStatisticMetrics.LINE90 && referenceMetrics[1]
 						 || metric == PerformanceStatisticMetrics.LINE50 && referenceMetrics[3]
+						 || metric == PerformanceStatisticMetrics.LINE25 && referenceMetrics[4]
+						 || metric == PerformanceStatisticMetrics.LINE75 && referenceMetrics[5]
+						 || metric == PerformanceStatisticMetrics.LINE95 && referenceMetrics[6]
+						 || metric == PerformanceStatisticMetrics.LINE98 && referenceMetrics[7]
+						 || metric == PerformanceStatisticMetrics.LINE99 && referenceMetrics[8]
 						 || metric == PerformanceStatisticMetrics.MAX && referenceMetrics[2]){
 					 currentValues.put(buildTypeId + '_' + message.getMetric() + '_' + getAlias(message), message);
 				 } else if (metric == null) {
@@ -156,6 +166,11 @@ public class BuildHistoryRefCheckAdapter extends BuildServerAdapter {
 						if (metric == PerformanceStatisticMetrics.AVERAGE && referenceMetrics[0]
 								|| metric == PerformanceStatisticMetrics.LINE90 && referenceMetrics[1]
 								|| metric == PerformanceStatisticMetrics.LINE50 && referenceMetrics[3]
+								|| metric == PerformanceStatisticMetrics.LINE25 && referenceMetrics[4]
+								|| metric == PerformanceStatisticMetrics.LINE75 && referenceMetrics[5]
+								|| metric == PerformanceStatisticMetrics.LINE95 && referenceMetrics[6]
+								|| metric == PerformanceStatisticMetrics.LINE98 && referenceMetrics[7]
+								|| metric == PerformanceStatisticMetrics.LINE99 && referenceMetrics[8]
 								|| metric == PerformanceStatisticMetrics.MAX && referenceMetrics[2]){
 							currentValues.put(buildTypeId + '_' + metric.getKey() + '_' + getAlias(message), null);
 						}

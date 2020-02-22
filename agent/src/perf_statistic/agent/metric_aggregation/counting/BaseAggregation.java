@@ -80,6 +80,26 @@ public abstract class BaseAggregation {
 				int ind90 = (int) Math.round(responseTimesToAggregate.size() * 0.9d);
 				return responseTimesToAggregate.get(ind90 - 1);
 			}
+			case LINE25: {
+				int ind25 = (int) Math.round(responseTimesToAggregate.size() * 0.25d);
+				return responseTimesToAggregate.get(ind25 - 1);
+			}
+			case LINE75: {
+				int ind75 = (int) Math.round(responseTimesToAggregate.size() * 075d);
+				return responseTimesToAggregate.get(ind75 - 1);
+			}
+			case LINE95: {
+				int ind95 = (int) Math.round(responseTimesToAggregate.size() * 0.95d);
+				return responseTimesToAggregate.get(ind95 - 1);
+			}
+			case LINE98: {
+				int ind98 = (int) Math.round(responseTimesToAggregate.size() * 0.98d);
+				return responseTimesToAggregate.get(ind98 - 1);
+			}
+			case LINE99: {
+				int ind99 = (int) Math.round(responseTimesToAggregate.size() * 0.99d);
+				return responseTimesToAggregate.get(ind99 - 1);
+			}
 			default:
 				return null;
 		}

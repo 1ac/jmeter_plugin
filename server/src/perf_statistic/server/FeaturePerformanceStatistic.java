@@ -56,6 +56,16 @@ public class FeaturePerformanceStatistic extends BuildFeature {
 			result.append("line90");
 		if ("true".equalsIgnoreCase(params.get(PluginConstants.PARAMS_METRIC_LINE50)))
 			result.append("line50");
+		if ("true".equalsIgnoreCase(params.get(PluginConstants.PARAMS_METRIC_LINE25)))
+			result.append("line25");
+		if ("true".equalsIgnoreCase(params.get(PluginConstants.PARAMS_METRIC_LINE75)))
+			result.append("line75");
+		if ("true".equalsIgnoreCase(params.get(PluginConstants.PARAMS_METRIC_LINE95)))
+			result.append("line95");
+		if ("true".equalsIgnoreCase(params.get(PluginConstants.PARAMS_METRIC_LINE98)))
+			result.append("line98");
+		if ("true".equalsIgnoreCase(params.get(PluginConstants.PARAMS_METRIC_LINE99)))
+			result.append("line99");
 		result.append(" ]");
 
 		if ("true".equalsIgnoreCase(params.get(PluginConstants.PARAMS_HTTP_RESPONSE_CODE)))
@@ -92,6 +102,11 @@ public class FeaturePerformanceStatistic extends BuildFeature {
 						&& !Boolean.parseBoolean(params.get(PluginConstants.PARAMS_METRIC_MIN))
 						&& !Boolean.parseBoolean(params.get(PluginConstants.PARAMS_METRIC_LINE90))
 						&& !Boolean.parseBoolean(params.get(PluginConstants.PARAMS_METRIC_LINE50))
+						&& !Boolean.parseBoolean(params.get(PluginConstants.PARAMS_METRIC_LINE25))
+						&& !Boolean.parseBoolean(params.get(PluginConstants.PARAMS_METRIC_LINE75))
+						&& !Boolean.parseBoolean(params.get(PluginConstants.PARAMS_METRIC_LINE95))
+						&& !Boolean.parseBoolean(params.get(PluginConstants.PARAMS_METRIC_LINE98))
+						&& !Boolean.parseBoolean(params.get(PluginConstants.PARAMS_METRIC_LINE99))
 				) {
 					invalidProperties.add(new InvalidProperty("perfTest.metrics", "Please, choose at least one metric!"));
 				}
